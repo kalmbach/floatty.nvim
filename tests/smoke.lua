@@ -20,8 +20,8 @@ local window = vim.api.nvim_get_current_win()
 local buffer = vim.api.nvim_get_current_buf()
 local channel = vim.bo[buffer].channel
 local config = vim.api.nvim_win_get_config(window)
-local width = math.floor(vim.o.columns * 0.85)
-local height = math.floor(vim.o.lines * 0.85)
+local width = math.floor(vim.o.columns * 0.75)
+local height = math.floor(vim.o.lines * 0.75)
 
 assert(config.relative == 'editor', 'terminal window is not a float')
 assert(config.width == width, 'terminal width was not set')

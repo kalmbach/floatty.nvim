@@ -5,8 +5,8 @@ local defaults = {
     toggle = '<M-t>',
   },
   window = {
-    width = 0.85,
-    height = 0.85,
+    width = 0.75,
+    height = 0.75,
     border = 'rounded',
     title = 'floatty',
     title_pos = 'center',
@@ -131,10 +131,15 @@ local group = vim.api.nvim_create_augroup('floatty', { clear = true })
 vim.api.nvim_create_autocmd('VimResized', {
   group = group,
   callback = function()
-    local win = terminal_win()
-    if not win then return end
+    local buffer = terminal_buf()
 
-    vim.api.nvim_win_set_config(win, float_config())
+    if not buffer then return end
+
+    for _, w in ipairs(vim.fn.win_findbuf(buffer)) do
+      if vim.api.nvim_win_get_config(w).relative == 'editor' then
+        vim.api.nvim_win_set_config(w, float_config())
+      end
+    end
   end,
   desc = 'Resize floatty terminal',
 })

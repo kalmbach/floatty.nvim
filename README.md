@@ -52,8 +52,8 @@ require('floatty').setup {
     toggle = '<M-t>',
   },
   window = {
-    width = 0.85,  -- fraction of the editor width
-    height = 0.85, -- fraction of the editor height
+    width = 0.75,  -- fraction of the editor width
+    height = 0.75, -- fraction of the editor height
     border = 'rounded',
     title = 'floatty',
     title_pos = 'center',
