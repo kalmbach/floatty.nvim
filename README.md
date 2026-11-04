@@ -1,5 +1,7 @@
 # floatty.nvim
 
+[![Tests](https://github.com/kalmbach/floatty.nvim/actions/workflows/test.yml/badge.svg)](https://github.com/kalmbach/floatty.nvim/actions/workflows/test.yml)
+
 **One floating terminal.** A small Neovim plugin that runs your shell in a
 centered floating window. You can show and hide the window as many times
 as you want, the shell keeps running in the background.
